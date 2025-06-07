@@ -1,0 +1,39 @@
+# Build artifacts
+*.o
+*.gch
+*.obj
+*.exe
+*.dll
+*.so
+*.dylib
+*.a
+*.lib
+Makefile
+build-*
+cmake-build-*
+
+# Qt specific
+*.pro.user
+*.pro.user.*
+*.qmlproject.user
+*.qmlproject.user.*
+*.gcno
+*.gcda
+.qtc_clangd
+.qmake.stash
+
+# IDE specific
+.vscode/
+.idea/
+*.user
+*.creator
+*.autosave
+*.layout
+.qtcreator/
+
+# macOS specific
+.DS_Store
+
+# Linux specific
+*~
+*.log
