@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/SonusFlow.dir/main.cpp.o.d"
   "CMakeFiles/SonusFlow.dir/mainwindow.cpp.o"
   "CMakeFiles/SonusFlow.dir/mainwindow.cpp.o.d"
+  "CMakeFiles/SonusFlow.dir/third_party/miniaudio.c.o"
+  "CMakeFiles/SonusFlow.dir/third_party/miniaudio.c.o.d"
   "SonusFlow"
   "SonusFlow.pdb"
   "SonusFlow_autogen/mocs_compilation.cpp"
@@ -16,6 +18,6 @@ file(REMOVE_RECURSE
 )
 
 # Per-language clean rules from dependency scanning.
-foreach(lang CXX)
+foreach(lang C CXX)
   include(CMakeFiles/SonusFlow.dir/cmake_clean_${lang}.cmake OPTIONAL)
 endforeach()

@@ -1,3 +1,7 @@
+# Build directories
+build/
+build-*/
+
 # Build artifacts
 *.o
 *.gch
@@ -86,7 +90,22 @@ Thumbs.db
 *.bak
 *.swo
 *.swp
+*.user
+*.pro.user
 
 # Debug garbage
 build/Desktop-Debug/*
 *.eJnrpV
+
+# General temporary files
+*.bak
+*.swp
+*~
+
+# Cmake files
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+cmake_install.cmake
+install_manifest.txt
+Makefile

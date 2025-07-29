@@ -4,6 +4,8 @@
 # _directory_contents at /usr/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/danilos/STUDIO/PROJECTS/SonusFlow/*.c")
 set(OLD_GLOB
+  "/home/danilos/STUDIO/PROJECTS/SonusFlow/build/Desktop-Debug/CMakeFiles/4.0.3-dirty/CompilerIdC/CMakeCCompilerId.c"
+  "/home/danilos/STUDIO/PROJECTS/SonusFlow/third_party/miniaudio.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -40,7 +42,9 @@ endif()
 # _directory_contents at /usr/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/danilos/STUDIO/PROJECTS/SonusFlow/*.cpp")
 set(OLD_GLOB
-  "/home/danilos/STUDIO/PROJECTS/SonusFlow/build/Desktop-Debug/CMakeFiles/4.0.2-dirty/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+  "/home/danilos/STUDIO/PROJECTS/SonusFlow/build/Desktop-Debug/CMakeFiles/4.0.3-dirty/CompilerIdCXX/CMakeCXXCompilerId.cpp"
+  "/home/danilos/STUDIO/PROJECTS/SonusFlow/build/Desktop-Debug/SonusFlow_autogen/EWIEGA46WW/moc_mainwindow.cpp"
+  "/home/danilos/STUDIO/PROJECTS/SonusFlow/build/Desktop-Debug/SonusFlow_autogen/mocs_compilation.cpp"
   "/home/danilos/STUDIO/PROJECTS/SonusFlow/main.cpp"
   "/home/danilos/STUDIO/PROJECTS/SonusFlow/mainwindow.cpp"
   )
@@ -61,7 +65,10 @@ endif()
 # _directory_contents at /usr/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/danilos/STUDIO/PROJECTS/SonusFlow/*.h")
 set(OLD_GLOB
+  "/home/danilos/STUDIO/PROJECTS/SonusFlow/build/Desktop-Debug/SonusFlow_autogen/include/ui_mainwindow.h"
+  "/home/danilos/STUDIO/PROJECTS/SonusFlow/build/Desktop-Debug/SonusFlow_autogen/moc_predefs.h"
   "/home/danilos/STUDIO/PROJECTS/SonusFlow/mainwindow.h"
+  "/home/danilos/STUDIO/PROJECTS/SonusFlow/third_party/miniaudio.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
@@ -152,6 +159,7 @@ endif()
 # _directory_contents at /usr/lib/cmake/Qt6LinguistTools/Qt6LinguistToolsMacros.cmake:55 (file)
 file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/danilos/STUDIO/PROJECTS/SonusFlow/*.qs")
 set(OLD_GLOB
+  "/home/danilos/STUDIO/PROJECTS/SonusFlow/build/Desktop-Debug/.qtc/package-manager/maintenance_tool_provider.qs"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
