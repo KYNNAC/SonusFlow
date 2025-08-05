@@ -1,9 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
+
 #include <QMainWindow>
-#include <QMap>
-#include <QStringList>
-#include "miniaudio.h"
+#include "miniaudio.h" // <-- Keep this for ma_engine
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -19,6 +18,7 @@ public:
 
 private slots:
     void onAmbienceChanged(int index);
+    void onPlayVoiceClicked();
 
 private:
     Ui::MainWindow *ui;
@@ -27,13 +27,9 @@ private:
     ma_engine engine;
     bool audioInitialized;
 
-    // --- SonusFlow Data ---
-    QMap<QString, QStringList> ambienceLayers;
-
     // --- Private Methods ---
     void initializeAudio();
     void shutdownAudio();
-    void setupMixerFor(const QString &ambienceName);
 };
 
-#endif
+#endif // MAINWINDOW_H

@@ -16,8 +16,14 @@ MainWindow::MainWindow(QWidget *parent)
     ui->ambienceComboBox->addItem("Busy Sidewalk");
     ui->ambienceComboBox->addItem("Concert");
 
+    // --- Add items for the focus voice dropdown ---
+    ui->voiceComboBox->addItem("Poem Recital");
+    ui->voiceComboBox->addItem("Whispered Story");
+    ui->voiceComboBox->addItem("News Report");
+
     // Connect the signal to slot.
     connect(ui->ambienceComboBox, &QComboBox::currentIndexChanged, this, &MainWindow::onAmbienceChanged);
+    connect(ui->playVoiceButton, &QPushButton::clicked, this, &MainWindow::onPlayVoiceClicked);
 }
 
 MainWindow::~MainWindow()
@@ -30,6 +36,12 @@ void MainWindow::onAmbienceChanged(int index)
 {
     // Simply tell the stacked widget to show the corresponding page.
     ui->mixerStackedWidget->setCurrentIndex(index);
+}
+
+void MainWindow::onPlayVoiceClicked()
+{
+    qDebug() << "Play Voice button clicked!";
+    // TODO: Add logic to load and play the selected voice file.
 }
 
 void MainWindow::initializeAudio()

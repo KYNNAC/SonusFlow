@@ -16,11 +16,11 @@
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
-     <layout class="QHBoxLayout" name="sceneSelectorLayout">
+     <layout class="QHBoxLayout" name="selectorsLayout">
       <item>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="ambienceLabel">
         <property name="text">
-         <string>Select Scene:</string>
+         <string>Select Background:</string>
         </property>
        </widget>
       </item>
@@ -28,7 +28,33 @@
        <widget class="QComboBox" name="ambienceComboBox"/>
       </item>
       <item>
-       <spacer name="horizontalSpacer">
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Policy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="voiceLabel">
+        <property name="text">
+         <string>Select Focus Voice:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="voiceComboBox"/>
+      </item>
+      <item>
+       <spacer name="horizontalSpacer_3">
         <property name="orientation">
          <enum>Qt::Orientation::Horizontal</enum>
         </property>
@@ -56,22 +82,447 @@
       <property name="frameShadow">
        <enum>QFrame::Shadow::Raised</enum>
       </property>
-      <widget class="QStackedWidget" name="mixerStackedWidget">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>260</y>
-         <width>782</width>
-         <height>260</height>
-        </rect>
-       </property>
-       <property name="currentIndex">
-        <number>0</number>
-       </property>
-       <widget class="QWidget" name="page"/>
-       <widget class="QWidget" name="page_2"/>
-      </widget>
      </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="transportLayout">
+      <item>
+       <widget class="QPushButton" name="playVoiceButton">
+        <property name="text">
+         <string>Play Voice</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="voiceStatusLabel">
+        <property name="text">
+         <string>Status: Ready</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="transportCenterSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="playBackgroundButton">
+        <property name="text">
+         <string>Play Background</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="backgroundStatusLabel">
+        <property name="text">
+         <string>Status: Ready</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="mainMixerLayout">
+      <item>
+       <widget class="QGroupBox" name="voiceMixerGroupBox">
+        <property name="title">
+         <string>Focus Voice</string>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3">
+         <item>
+          <layout class="QVBoxLayout" name="voiceLowLayout">
+           <item>
+            <widget class="QSlider" name="slider_voice_low">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_voice_low">
+             <property name="text">
+              <string>Low</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="voiceMidLayout">
+           <item>
+            <widget class="QSlider" name="slider_voice_mid">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_voice_mid">
+             <property name="text">
+              <string>Mid</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="voiceHighLayout">
+           <item>
+            <widget class="QSlider" name="slider_voice_high">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_voice_high">
+             <property name="text">
+              <string>High</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="ambienceMixerGroupBox">
+        <property name="title">
+         <string>Background</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout_2">
+         <item>
+          <widget class="QStackedWidget" name="mixerStackedWidget">
+           <property name="currentIndex">
+            <number>1</number>
+           </property>
+           <widget class="QWidget" name="page_cafe">
+            <layout class="QHBoxLayout" name="horizontalLayout_cafe">
+             <item>
+              <layout class="QVBoxLayout" name="vLayout_cafe_dialogue">
+               <item>
+                <widget class="QSlider" name="slider_cafe_dialogue">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_cafe_dialogue">
+                 <property name="text">
+                  <string>Mumbled&lt;br&gt;Dialogue</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="vLayout_cafe_cups">
+               <item>
+                <widget class="QSlider" name="slider_cafe_cups">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_cafe_cups">
+                 <property name="text">
+                  <string>Clinking&lt;br&gt;Cups</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="vLayout_cafe_music">
+               <item>
+                <widget class="QSlider" name="slider_cafe_music">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_cafe_music">
+                 <property name="text">
+                  <string>Background&lt;br&gt;Music</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="spacer_cafe">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="page_sidewalk">
+            <layout class="QHBoxLayout" name="horizontalLayout_sidewalk">
+             <item>
+              <layout class="QVBoxLayout" name="vLayout_sidewalk_dialogue">
+               <item>
+                <widget class="QSlider" name="slider_sidewalk_dialogue">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_sidewalk_dialogue">
+                 <property name="text">
+                  <string>Mumbled&lt;br&gt;Dialogue</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="vLayout_sidewalk_footsteps">
+               <item>
+                <widget class="QSlider" name="slider_sidewalk_footsteps">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_sidewalk_footsteps">
+                 <property name="text">
+                  <string>Footsteps</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="vLayout_sidewalk_traffic">
+               <item>
+                <widget class="QSlider" name="slider_sidewalk_traffic">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_sidewalk_traffic">
+                 <property name="text">
+                  <string>Distant&lt;br&gt;Traffic</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="vLayout_sidewalk_sirens">
+               <item>
+                <widget class="QSlider" name="slider_sidewalk_sirens">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_sidewalk_sirens">
+                 <property name="text">
+                  <string>Sirens</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="spacer_sidewalk">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QWidget" name="page_concert">
+            <layout class="QHBoxLayout" name="horizontalLayout_concert">
+             <item>
+              <layout class="QVBoxLayout" name="vLayout_concert_vocals">
+               <item>
+                <widget class="QSlider" name="slider_concert_vocals">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_concert_vocals">
+                 <property name="text">
+                  <string>Lead&lt;br&gt;Vocals</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="vLayout_concert_guitars">
+               <item>
+                <widget class="QSlider" name="slider_concert_guitars">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_concert_guitars">
+                 <property name="text">
+                  <string>Guitars</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="vLayout_concert_bass">
+               <item>
+                <widget class="QSlider" name="slider_concert_bass">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_concert_bass">
+                 <property name="text">
+                  <string>Bass</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="vLayout_concert_drums">
+               <item>
+                <widget class="QSlider" name="slider_concert_drums">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_concert_drums">
+                 <property name="text">
+                  <string>Drums</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" name="vLayout_concert_crowd">
+               <item>
+                <widget class="QSlider" name="slider_concert_crowd">
+                 <property name="orientation">
+                  <enum>Qt::Orientation::Vertical</enum>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_concert_crowd">
+                 <property name="text">
+                  <string>Crowd&lt;br&gt;Noise</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <spacer name="spacer_concert">
+               <property name="orientation">
+                <enum>Qt::Orientation::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
     </item>
    </layout>
   </widget>
