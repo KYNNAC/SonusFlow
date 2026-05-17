@@ -71,6 +71,15 @@ To move Sonus Flow from a prototype to a clinically viable tool, the following t
 
 ---
 
+### ⚖️ Licensing & Open-Core Vision
+SonusFlow core is licensed under **Apache 2.0** to enable community collaboration and commercial adoption. 
+
+**Future commercial modules** (premium DSP effects, cloud sync, enterprise support) will be offered under separate proprietary licenses and distributed via private repositories or commercial channels.
+
+**Contributions**: By submitting a pull request, you agree to license your contribution under Apache 2.0. For significant architectural contributions, please open an issue first to discuss alignment with the project roadmap.
+
+---
+
 ## Developer Status
 The project is currently in the early architectural phase. Build instructions will be provided once the MVP (Minimum Viable Product) reaches a stable build state.
 
